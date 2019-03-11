@@ -43,15 +43,13 @@ ul {text-align: center;}
         }
 #nav a:link, #nav a:visited {display: block;
                               color: #ffffff;
-                              background-color: #C1B8C8;
                               font-weight: 400;
                               text-align: center;
                               text-decoration: none;
                               font-size: 1em;
                               padding: 10px;
                               font-family: Staatliches, Helvetica, sans-serif;}
-#nav a:hover, #nav a:active {background-color: #A9DDD6;
-                              width: 100%;}
+#nav a:hover, #nav a:active {background-color: #A9DDD6;}
 
 .footer {font-family: sans-serif, "Times New Roman", serif;
           font-style: italic;
