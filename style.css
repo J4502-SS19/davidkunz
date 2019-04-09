@@ -2,7 +2,8 @@ p{color:#ffffff;
   font-family: Abel, Lato, sans-serif;
   font-size:1.1em;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
+  max-width: 100%;
     }
 h1{color:#A9DDD6;
   font-family: Quicksand, Roboto, serif;
@@ -16,11 +17,11 @@ margin: 0 0 0 0;}
 ul {text-align: center;}
 
 #container {background-color: #7A8B99;
-            width: 85%;
-            margin: 0 auto;
+            width: 90%;
+            margin: 10 auto 10 auto;
           border-bottom: 0}
 
-#head {display: block;
+.header {display: block;
       color: #A9DDD6;
       background-color: #9BA0BC;
       padding: 5px;
@@ -119,36 +120,45 @@ article p {font-size: 1.4em;
 
 .flex{
       grid-area: a;
+      margin: auto 5px;
      }
 
-.Lede {grid-area: f;
+.lede {grid-area: f;
   }
 
 .section2 {
        grid-area: b;
      }
 .smoothie {grid-area: g;
+  margin: auto 5px;
   }
 
 .image3 {
        grid-area: c;
+       margin: auto 5px;
      }
 
 .section3 {
        grid-area: d;
      }
 .section3 img {margin-top: 15px;
+  margin: auto 5px;
     }
 
 .pullquote {font-size: 3em;
   font-style: italic;
-       grid-area: e; }
+       grid-area: e;
+        }
 
-.section4 {grid-area: h;}
+.section4 {grid-area: h;
+      }
 
 .card_img {grid-area: I;
+    margin: auto 5px;
         }
-.section5 {grid-area:j;}
+.section5 {grid-area:j;
+      }
+
 @media (max-width: 1200px){
   article {display: grid; grid-template-columns: 200px 1fr 1fr;
         grid-gap: 20px;
