@@ -1,0 +1,137 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl330\partightenfactor0
+
+\f0\fs36 \cf0 \expnd0\expndtw0\kerning0
+Building a hamburger menu\
+\
+So we have an index page with a list of items for a nav and a header. We\'92re going to build a mobile menu that slides out.\
+\
+In our css, we already have a background color defined and the font-family.\
+\
+First, let\'92s do what we already know how to do \'97 style and size the navigation.\
+\
+We\'92re going to set up the list items in display block and put a border on the top for dimension.\
+\
+nav ul li \{\
+  display:block;\
+  border-top:1px #79896D solid;\
+\}\
+\
+Then we\'92ll style our links. We\'92ll give the text a color, take off the underline, add display: block and include some padding.\
+\
+nav a \{\
+  color:#F8ECC2;\
+  display:block;\
+  text-decoration: none;\
+  padding:20px 30px;\
+ \}\
+\
+It looks like we need some color behind the nav. Our nav is wrapped in the header tag, so let\'92s use that to define the behavior of the header. We\'92ll give it a background color, some margin and some padding.\
+\
+header\{\
+  background-color:#65A8A6;\
+  margin:0;\
+  padding:0 10px;\
+\}\
+\
+That\'92s all good, but we want to hide the menu on mobile, and we need the hamburger icon.\
+\
+Back in our html file, we\'92re going to add the hamburger icon. We\'92re going to use a character for it rather than uploading an image. We need it to be clickable so we\'92ll wrap it in an a tag.\
+\
+<a href="#">&#9776;</a>\
+\
+Let\'92s give it a class of menu-trigger.\
+\
+OK, that gives us our hamburger, but it\'92s space awkwardly. Let\'92s get the header and hamburger icon on the same line using flex box.\
+\
+display:flex;\
+flex-flow:row;\
+\
+Now, it looks weird because the header is before the hamburger icon. We can reorder these without changing the html.\
+\
+Let\'92s change the order using the class .menu-trigger.\
+\
+.menu-trigger \{\
+   order:1;\
+ \}\
+\
+And then we need to tell the h1 in the header to be No. 2, let\'92s also change the color of the text while we\'92re there.\
+\
+header h1\{\
+   order:2;\
+   color:white;\
+ \}\
+\
+But our menu is still showing. We need to hide it and then have it expand when touched. Let\'92s hide it first using CSS.\
+\
+nav ul \{\
+display: none;\
+\}\
+\
+So now it\'92s time to add in our javascript. First we need to tell our html to load the query and refer to the js file. Let\'92s put this in our head tag.\
+\
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>\
+<script src="menu.js" type="text/javascript"></script>\
+\
+Now, open the menu.js file. Remember that we want the menu to slide out on a click or touch. First, we\'92ll use the document .ready function. This makes sure the page and javascript has loaded on the page before attempting to perform an action.\
+\
+$(document).ready(function() \{\
+\
+Then we want it to slide out when our hamburger is clicked or touched. Remember the hamburger menu was in the menu-trigger class, so we\'92ll reference that.\
+\
+$('.menu-trigger').click(function() \{\
+\
+Then we want our navigation to slide out. We\'92ll use the slide toggle command. First, we\'92ll reference our unordered list for our nav and then add the .slidgeToggle command.\
+\
+$('nav ul').slideToggle();\
+  \});\
+\
+We\'92ll close it off, and then we can add some time to the transition using an integer. The default is 400, we\'92ll smooth it out at 500.\
+\
+But nothing is happening. Remember that we told the ul not to display in the CSS. Now we need to tell it to display when the action is taken and it\'92s on a small screen. We\'92ll tell it at what window width and then tell it to remove the style (display: none).\
+\
+$(window).resize(function() \{\
+	   if (  $(window).width() > 500 ) \{\
+		$('nav ul').removeAttr('style');\
+	 \}\
+	\});\
+\});\
+\
+So we have a working mobile navigation!\
+\
+What about at other screen sizes? Let\'92s use media queries to make it look right at desktop. We\'92ll use 700px as our min-width.\
+\
+@media screen and (min-width:700px) \
+\
+So remember that we told the ul not to display on mobile until action was taken, but now we want to see the nav ul. And we also want it to behave differently than it did on mobile using flex box.\
+\
+nav ul \{\
+	display: flex;\
+\
+\}\
+\
+Let\'92s get rid of that border and hide the hamburger icon.\
+\
+nav ul li\{\
+	border-top:none;\
+\}\
+\
+.menu-trigger\{\
+	display:none;\
+\}\
+\
+Remember that we flipped the order of the header and the navigation for mobile, but now we want our header to be first followed by the menu.\
+\
+nav \{\
+	order:2;\
+\}\
+\
+header h1\{\
+	order:1;\
+\}\
+}
