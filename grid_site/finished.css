@@ -9,7 +9,6 @@ nav ul {
 }
 
 .authorbox img {
-  /*visibility: hidden;*/
   display: none;
 }
 
@@ -32,7 +31,6 @@ article:last-of-type {
         flex-flow: row;
         justify-content: space-between;
     }
-
 }
 
 @media screen and (min-width: 600px) {

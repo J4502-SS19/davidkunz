@@ -1,1 +1,52 @@
+.title{ display: flex;
+        justify-content: space-between;}
 
+nav ul{
+  display: flex;
+  flex-flow: column;
+}
+
+.authorbox img {display: block;
+  width: 100%;
+  margin-top: 0.5em;
+                }
+
+.authorbox{
+  width: 25%;
+  float: left;
+  margin-right: 20px;
+  max-width: 200px;
+}
+
+.pullquote{
+  display: none;
+}
+
+article:last-of-type{
+border-bottom:none;
+}
+
+@media screen and (min-width: 450px) {
+nav ul {flex-flow: row;
+  justify-content: space-between;
+    }
+  }
+
+@media screen and (min-width: 600px) {
+  #container{width: 80%;}
+}
+
+@media screen and (min-width: 800px) {
+  .item1 {margin-right: auto;}
+nav ul li {
+  margin: 5px;}
+.pullquote {display: block;
+}
+}
+
+@@media screen and (min-width: 1000px) {
+  article {display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+  }
+
+}

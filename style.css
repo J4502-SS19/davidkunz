@@ -2,7 +2,7 @@ p{color:#ffffff;
   font-family: Abel, Lato, sans-serif;
   font-size:1.1em;
   text-align: center;
-  margin: .7px;
+  margin: 5px;
     }
 h1{color:#A9DDD6;
   font-family: Quicksand, Roboto, serif;
@@ -73,13 +73,114 @@ ul {text-align: center;}
           font-size: 0.8em;
           text-align: center;}
 
+.title {display: flex;
+        justify-content: space-around;
+        }
+
+
 img {display: block;
     border: none;
     margin: auto;
               }
+
+h2{color: black;
+  font-family: Georgia, sans-serif, serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 4em;
+  background-color: white;
+      }
+
+article {display: grid; grid-template-columns: 200px 1fr 1fr;
+      grid-gap: 20px;
+      grid-template-areas:
+       "a f f"
+       "b b b"
+       "h h g"
+       "c c e"
+       "d d d"
+       "j j I"
+      }
+
+article p {font-size: 1.4em;
+  text-align: left;
+  margin-bottom: 10px;
+    }
+
+.first-sentence {
+    font-size: 3em;
+    font-weight: bold;
+    padding-top: 35px;
+}
+.extra {
+  font-size: 1.8em;
+  color: #D3D3D3;
+}
+
+.flex{
+      grid-area: a;
+     }
+
+.Lede {grid-area: f;
+  }
+
+.section2 {
+       grid-area: b;
+     }
+.smoothie {grid-area: g;
+  }
+
+.image3 {
+       grid-area: c;
+     }
+
+.section3 {
+       grid-area: d;
+     }
+.section3 img {margin-top: 15px;
+    }
+
+.pullquote {font-size: 3em;
+  font-style: italic;
+       grid-area: e; }
+
+.section4 {grid-area: h;}
+
+.card_img {grid-area: I;
+        }
+.section5 {grid-area:j;}
+@media (max-width: 1200px){
+  article {display: grid; grid-template-columns: 200px 1fr 1fr;
+        grid-gap: 20px;
+        grid-template-areas:
+         "a f f"
+         "b b b"
+         "h h h"
+         "g g g"
+         "d d d"
+         "j j I"
+        }
+    .image3 {display: none;}
+    .pullquote {display: none;}
+}
+
 @media (max-width: 800px){
-            #nav{display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: space-around;}
+      #nav{display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;}
+
+      article {display: grid; grid-template-columns: 200px 1fr 1fr;
+            grid-gap: 20px;
+            grid-template-areas:
+             "f f f"
+             "b b b"
+             "h h h"
+             "g g g"
+             "d d d"
+             "I I I"
+             "j j j"
+            }
+      .flex{display: none;}
+      .card{float: right;}
             }
