@@ -31,7 +31,7 @@ ul {text-align: center;}
 
 #nav {display: flex;
       justify-content: space-around;
-      flex-flow: row wrap;
+      flex-flow: column;
       background-color: #C1B8C8;
 }
 
@@ -158,6 +158,56 @@ article p {font-size: 1.4em;
         }
 .section5 {grid-area:j;
       }
+
+nav ul li {
+      display: block;
+      border-top: 3px black solid;
+      }
+
+nav a {color: white;
+      display: block;
+      text-decoration: none;
+      padding: 10px 10px;
+      }
+
+header {
+      display: flex;
+      flex-flow: row;
+      background-color: #9BA0BC;
+      margin: 0;
+      padding: 0 10px;
+      }
+
+.menu-trigger {
+          order: 1;
+          font-size: 1.75em;
+          width: 2em;
+          }
+
+header h1 {
+      order: 2;
+    }
+
+nav ul {display: none;
+      }
+
+@media screen and (min-width:700px){
+nav ul {
+        display: flex;
+        }
+nav ul li {  border: 1px black solid;
+          }
+
+.menu-trigger {display: none;
+          }
+
+header h1{order: 1;
+          }
+
+nav {order: 2;
+      }
+      }
+
 
 @media (max-width: 1200px){
   article {display: grid; grid-template-columns: 200px 1fr 1fr;
