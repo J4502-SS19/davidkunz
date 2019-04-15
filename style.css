@@ -173,7 +173,7 @@ header {
       flex-flow: row;
       background-color: #9BA0BC;
       margin: 0;
-      padding: 0 10px;
+      padding: 0 5px;
       }
 
 .menu-trigger {
@@ -231,10 +231,7 @@ nav {order: 2;
 }
 
 @media (max-width: 800px){
-      #nav{display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-around;}
+      
 
       article {display: grid; grid-template-columns: 200px 1fr 1fr;
             grid-gap: 20px;
