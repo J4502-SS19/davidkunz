@@ -4,7 +4,13 @@ var allParagraphs = document.getElementsByTagName('p');
 
 var firstParagraph = allParagraphs[0];
 
+function revealCopy () {
+  console.log("Clicked!");
+}
+
 newLink.setAttribute('href','#');
+
+newLink.addEventListener("click", revealCopy);
 
 newLink.innerHTML="Read More";
 
